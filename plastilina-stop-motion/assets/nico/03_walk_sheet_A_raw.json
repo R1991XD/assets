@@ -1,0 +1,66 @@
+{
+ "walk_n1_contact": {
+  "width": 553,
+  "height": 1121,
+  "figure_top": 24,
+  "figure_bottom": 1096,
+  "figure_height": 1073,
+  "figure_left": 21,
+  "figure_right": 528,
+  "center_x": 260.9743707782341,
+  "feet_left": 358,
+  "feet_right": 445,
+  "sheet_origin": [
+   0,
+   18
+  ]
+ },
+ "walk_n2_down": {
+  "width": 528,
+  "height": 1062,
+  "figure_top": 24,
+  "figure_bottom": 1037,
+  "figure_height": 1014,
+  "figure_left": 24,
+  "figure_right": 503,
+  "center_x": 268.5824978018308,
+  "feet_left": 218,
+  "feet_right": 409,
+  "sheet_origin": [
+   524,
+   75
+  ]
+ },
+ "walk_n3_passing": {
+  "width": 469,
+  "height": 1102,
+  "figure_top": 24,
+  "figure_bottom": 1077,
+  "figure_height": 1054,
+  "figure_left": 24,
+  "figure_right": 444,
+  "center_x": 227.94039566140228,
+  "feet_left": 134,
+  "feet_right": 323,
+  "sheet_origin": [
+   1053,
+   35
+  ]
+ },
+ "walk_n4_up": {
+  "width": 500,
+  "height": 1127,
+  "figure_top": 24,
+  "figure_bottom": 1102,
+  "figure_height": 1079,
+  "figure_left": 24,
+  "figure_right": 475,
+  "center_x": 243.4431616984707,
+  "feet_left": 186,
+  "feet_right": 286,
+  "sheet_origin": [
+   1542,
+   4
+  ]
+ }
+}

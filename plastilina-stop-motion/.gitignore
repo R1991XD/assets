@@ -1,0 +1,4 @@
+# HyperFrames per-machine state (project history, snapshots, locks)
+.hyperframes/
+node_modules/
+__pycache__/

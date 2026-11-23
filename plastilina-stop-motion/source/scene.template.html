@@ -1,0 +1,26 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    /* One cel = one exposure: a photographed puppet pose with its own contact and cast
+       shadow (baked by the build), held for N frames. */
+    .{{ID}}-cel {
+      position: absolute;
+      z-index: 2;
+    }
+  </style>
+  <div id="root" data-composition-id="{{ID}}" data-width="{{W}}" data-height="{{H}}">
+    <!-- X-sheet ({{LABEL}}): one clip per exposure. Written by source/build_xsheet.py from source/xsheet.json -->
+{{CELS}}
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Stop-motion: nothing is tweened. The only property that follows the drawings is the
+    // set-light flicker, which jumps once per exposure (one value per photographed frame).
+    const exposures = {{EXPOSURES_JSON}};
+    for (const e of exposures) tl.set("#" + e.id, { "--hf-color-grading-exposure": e.luz }, e.t);
+    window.__timelines["{{ID}}"] = tl;
+  </script>
+</template>

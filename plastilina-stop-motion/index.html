@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #24170f;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      #plato {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        object-fit: cover;
+        z-index: 1;
+      }
+      #camina,
+      #saluda {
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 3 s at 24 fps (72 frames), one locked-off shot on a clay miniature set:
+         Nico walks along the cobbles (scene "camina"), stops and waves (scene "saluda"). -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="3"
+      data-fps="24"
+      data-width="1920"
+      data-height="1080"
+    >
+      <img
+        id="plato"
+        class="clip"
+        src="assets/plate/plato.jpg"
+        alt="Plató de plastilina: acera empedrada frente a una casita de ladrillo"
+        data-start="0"
+        data-duration="3"
+        data-track-index="0"
+        data-color-grading='{"details":{"vignette":0.22,"vignetteFeather":0.7,"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="--hf-color-grading-exposure: 0"
+      />
+      <div
+        id="camina"
+        data-composition-id="camina"
+        data-composition-src="compositions/camina.html"
+        data-start="0"
+        data-duration="1.5831"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <div
+        id="saluda"
+        data-composition-id="saluda"
+        data-composition-src="compositions/saluda.html"
+        data-start="1.5831"
+        data-duration="1.4169"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // Set-light flicker of a stop-motion shoot: one small exposure offset per photographed
+      // frame (exposure), stepped with tl.set, deterministic (values come from the x-sheet build).
+      const luz = [[0.0,0.0059],[0.0831,-0.0019],[0.1665,-0.0068],[0.2498,-0.0173],[0.3331,-0.0133],[0.4165,0.0026],[0.4998,0.0138],[0.5831,0.0049],[0.6665,0.0116],[0.7498,0.017],[0.8331,-0.0046],[0.9165,-0.0202],[0.9998,-0.0159],[1.0831,-0.0237],[1.1665,-0.0152],[1.2498,0.0121],[1.3331,0.0072],[1.4165,-0.012],[1.4998,0.006],[1.5831,-0.0091],[1.7498,0.0073],[1.9165,-0.0093],[2.0831,0.0089],[2.2498,-0.0037],[2.4165,-0.0201],[2.5831,0.0025],[2.7498,-0.008],[2.9165,-0.0102]];
+      for (const [t, v] of luz) tl.set("#plato", { "--hf-color-grading-exposure": v }, t);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

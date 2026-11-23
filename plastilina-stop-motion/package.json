@@ -1,0 +1,13 @@
+{
+  "name": "plastilina-stop-motion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.9.86 preview",
+    "check": "npx --yes hyperframes@0.9.86 check",
+    "build": "python3 source/build_xsheet.py",
+    "render": "npx --yes hyperframes@0.9.86 render",
+    "render:final": "npx --yes hyperframes@0.9.86 render --quality delivery --fps 24 -o renders/nico-saluda_24fps.mp4",
+    "publish": "npx --yes hyperframes@0.9.86 publish"
+  }
+}

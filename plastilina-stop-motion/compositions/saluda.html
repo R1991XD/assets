@@ -1,0 +1,61 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    /* One cel = one exposure: a photographed puppet pose with its own contact and cast
+       shadow (baked by the build), held for N frames. */
+    .saluda-cel {
+      position: absolute;
+      z-index: 2;
+    }
+  </style>
+  <div id="root" data-composition-id="saluda" data-width="1920" data-height="1080">
+    <!-- X-sheet (stop, anticipation and wave): one clip per exposure. Written by source/build_xsheet.py from source/xsheet.json -->
+    <!-- frames 39-42 (4 f) · stop: feet together -->
+    <img id="saluda-20" class="clip saluda-cel" src="assets/cels/nico_master.png" alt="Nico · nico_master" data-start="0" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 320.2px; top: 389.2px; width: 603.3px; height: 544.8px; --hf-color-grading-exposure: 0" />
+    <!-- frames 43-46 (4 f) · anticipation -->
+    <img id="saluda-21" class="clip saluda-cel" src="assets/cels/wave_1_anticip.png" alt="Nico · wave_1_anticip" data-start="0.1667" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 312.2px; top: 375.8px; width: 629.5px; height: 560.0px; --hf-color-grading-exposure: 0" />
+    <!-- frames 47-50 (4 f) -->
+    <img id="saluda-22" class="clip saluda-cel" src="assets/cels/wave_2_out.png" alt="Nico · wave_2_out" data-start="0.3334" data-duration="0.1666" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; --hf-color-grading-exposure: 0" />
+    <!-- frames 51-54 (4 f) -->
+    <img id="saluda-23" class="clip saluda-cel" src="assets/cels/wave_3_in.png" alt="Nico · wave_3_in" data-start="0.5" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; --hf-color-grading-exposure: 0" />
+    <!-- frames 55-58 (4 f) -->
+    <img id="saluda-24" class="clip saluda-cel" src="assets/cels/wave_2_out.png" alt="Nico · wave_2_out" data-start="0.6667" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; --hf-color-grading-exposure: 0" />
+    <!-- frames 59-62 (4 f) -->
+    <img id="saluda-25" class="clip saluda-cel" src="assets/cels/wave_4_blink.png" alt="Nico · wave_4_blink" data-start="0.8334" data-duration="0.1666" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 308.3px; top: 377.2px; width: 629.9px; height: 558.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 63-66 (4 f) -->
+    <img id="saluda-26" class="clip saluda-cel" src="assets/cels/wave_2_out.png" alt="Nico · wave_2_out" data-start="1" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; --hf-color-grading-exposure: 0" />
+    <!-- frames 67-70 (4 f) -->
+    <img id="saluda-27" class="clip saluda-cel" src="assets/cels/wave_3_in.png" alt="Nico · wave_3_in" data-start="1.1667" data-duration="0.1667" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; --hf-color-grading-exposure: 0" />
+    <!-- frames 71-72 (2 f) -->
+    <img id="saluda-28" class="clip saluda-cel" src="assets/cels/wave_2_out.png" alt="Nico · wave_2_out" data-start="1.3334" data-duration="0.0835" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; --hf-color-grading-exposure: 0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Stop-motion: nothing is tweened. The only property that follows the drawings is the
+    // set-light flicker, which jumps once per exposure (one value per photographed frame).
+    const exposures = [{"id":"saluda-20","t":0.0,"luz":-0.0091},{"id":"saluda-21","t":0.1667,"luz":0.0073},{"id":"saluda-22","t":0.3334,"luz":-0.0093},{"id":"saluda-23","t":0.5,"luz":0.0089},{"id":"saluda-24","t":0.6667,"luz":-0.0037},{"id":"saluda-25","t":0.8334,"luz":-0.0201},{"id":"saluda-26","t":1.0,"luz":0.0025},{"id":"saluda-27","t":1.1667,"luz":-0.008},{"id":"saluda-28","t":1.3334,"luz":-0.0102}];
+    for (const e of exposures) tl.set("#" + e.id, { "--hf-color-grading-exposure": e.luz }, e.t);
+    window.__timelines["saluda"] = tl;
+  </script>
+</template>

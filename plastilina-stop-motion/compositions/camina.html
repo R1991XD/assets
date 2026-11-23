@@ -1,0 +1,101 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    /* One cel = one exposure: a photographed puppet pose with its own contact and cast
+       shadow (baked by the build), held for N frames. */
+    .camina-cel {
+      position: absolute;
+      z-index: 2;
+    }
+  </style>
+  <div id="root" data-composition-id="camina" data-width="1920" data-height="1080">
+    <!-- X-sheet (walk: 4 steps + the stopping step): one clip per exposure. Written by source/build_xsheet.py from source/xsheet.json -->
+    <!-- frames 1-2 (2 f) -->
+    <img id="camina-01" class="clip camina-cel" src="assets/cels/walk_n1_contact.png" alt="Nico · walk_n1_contact" data-start="0" data-duration="0.0831" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -332.4px; top: 398.8px; width: 635.6px; height: 535.5px; --hf-color-grading-exposure: 0" />
+    <!-- frames 3-4 (2 f) -->
+    <img id="camina-02" class="clip camina-cel" src="assets/cels/walk_n2_down.png" alt="Nico · walk_n2_down" data-start="0.0831" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -262.0px; top: 425.8px; width: 603.6px; height: 506.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 5-6 (2 f) -->
+    <img id="camina-03" class="clip camina-cel" src="assets/cels/walk_n3_passing.png" alt="Nico · walk_n3_passing" data-start="0.1665" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -234.1px; top: 407.5px; width: 590.3px; height: 525.9px; --hf-color-grading-exposure: 0" />
+    <!-- frames 7-8 (2 f) -->
+    <img id="camina-04" class="clip camina-cel" src="assets/cels/walk_n4_up.png" alt="Nico · walk_n4_up" data-start="0.2498" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -225.9px; top: 396.1px; width: 613.2px; height: 538.2px; --hf-color-grading-exposure: 0" />
+    <!-- frames 9-10 (2 f) -->
+    <img id="camina-05" class="clip camina-cel" src="assets/cels/walk_f1_contact.png" alt="Nico · walk_f1_contact" data-start="0.3331" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -189.9px; top: 397.7px; width: 629.5px; height: 536.6px; --hf-color-grading-exposure: 0" />
+    <!-- frames 11-12 (2 f) -->
+    <img id="camina-06" class="clip camina-cel" src="assets/cels/walk_f2_down.png" alt="Nico · walk_f2_down" data-start="0.4165" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -113.2px; top: 425.6px; width: 580.6px; height: 506.9px; --hf-color-grading-exposure: 0" />
+    <!-- frames 13-14 (2 f) -->
+    <img id="camina-07" class="clip camina-cel" src="assets/cels/walk_f3_passing.png" alt="Nico · walk_f3_passing" data-start="0.4998" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -108.2px; top: 407.7px; width: 592.4px; height: 525.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 15-16 (2 f) -->
+    <img id="camina-08" class="clip camina-cel" src="assets/cels/walk_f4_up.png" alt="Nico · walk_f4_up" data-start="0.5831" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -94.5px; top: 394.5px; width: 618.5px; height: 539.8px; --hf-color-grading-exposure: 0" />
+    <!-- frames 17-18 (2 f) -->
+    <img id="camina-09" class="clip camina-cel" src="assets/cels/walk_n1_contact_alt.png" alt="Nico · walk_n1_contact_alt" data-start="0.6665" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: -55.9px; top: 403.7px; width: 632.6px; height: 529.9px; --hf-color-grading-exposure: 0" />
+    <!-- frames 19-20 (2 f) -->
+    <img id="camina-10" class="clip camina-cel" src="assets/cels/walk_n2_down_alt.png" alt="Nico · walk_n2_down_alt" data-start="0.7498" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 14.3px; top: 435.5px; width: 597.1px; height: 496.3px; --hf-color-grading-exposure: 0" />
+    <!-- frames 21-22 (2 f) -->
+    <img id="camina-11" class="clip camina-cel" src="assets/cels/walk_n3_passing_alt.png" alt="Nico · walk_n3_passing_alt" data-start="0.8331" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 46.1px; top: 413.4px; width: 586.5px; height: 519.8px; --hf-color-grading-exposure: 0" />
+    <!-- frames 23-24 (2 f) -->
+    <img id="camina-12" class="clip camina-cel" src="assets/cels/walk_n4_up_alt.png" alt="Nico · walk_n4_up_alt" data-start="0.9165" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 47.9px; top: 401.4px; width: 613.7px; height: 532.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 25-26 (2 f) -->
+    <img id="camina-13" class="clip camina-cel" src="assets/cels/walk_f1_contact.png" alt="Nico · walk_f1_contact" data-start="0.9998" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 85.5px; top: 397.7px; width: 629.5px; height: 536.6px; --hf-color-grading-exposure: 0" />
+    <!-- frames 27-28 (2 f) -->
+    <img id="camina-14" class="clip camina-cel" src="assets/cels/walk_f2_down.png" alt="Nico · walk_f2_down" data-start="1.0831" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 162.1px; top: 425.6px; width: 580.6px; height: 506.9px; --hf-color-grading-exposure: 0" />
+    <!-- frames 29-30 (2 f) -->
+    <img id="camina-15" class="clip camina-cel" src="assets/cels/walk_f3_passing.png" alt="Nico · walk_f3_passing" data-start="1.1665" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 167.1px; top: 407.7px; width: 592.4px; height: 525.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 31-32 (2 f) -->
+    <img id="camina-16" class="clip camina-cel" src="assets/cels/walk_f4_up.png" alt="Nico · walk_f4_up" data-start="1.2498" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 180.9px; top: 394.5px; width: 618.5px; height: 539.8px; --hf-color-grading-exposure: 0" />
+    <!-- frames 33-34 (2 f) -->
+    <img id="camina-17" class="clip camina-cel" src="assets/cels/walk_n1_contact.png" alt="Nico · walk_n1_contact" data-start="1.3331" data-duration="0.0834" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 215.0px; top: 398.8px; width: 635.6px; height: 535.5px; --hf-color-grading-exposure: 0" />
+    <!-- frames 35-36 (2 f) -->
+    <img id="camina-18" class="clip camina-cel" src="assets/cels/walk_n2_down.png" alt="Nico · walk_n2_down" data-start="1.4165" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 285.4px; top: 425.8px; width: 603.6px; height: 506.7px; --hf-color-grading-exposure: 0" />
+    <!-- frames 37-38 (2 f) -->
+    <img id="camina-19" class="clip camina-cel" src="assets/cels/walk_n3_passing.png" alt="Nico · walk_n3_passing" data-start="1.4998" data-duration="0.0833" data-track-index="1"
+      data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+      style="left: 313.3px; top: 407.5px; width: 590.3px; height: 525.9px; --hf-color-grading-exposure: 0" />
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // Stop-motion: nothing is tweened. The only property that follows the drawings is the
+    // set-light flicker, which jumps once per exposure (one value per photographed frame).
+    const exposures = [{"id":"camina-01","t":0.0,"luz":0.0059},{"id":"camina-02","t":0.0831,"luz":-0.0019},{"id":"camina-03","t":0.1665,"luz":-0.0068},{"id":"camina-04","t":0.2498,"luz":-0.0173},{"id":"camina-05","t":0.3331,"luz":-0.0133},{"id":"camina-06","t":0.4165,"luz":0.0026},{"id":"camina-07","t":0.4998,"luz":0.0138},{"id":"camina-08","t":0.5831,"luz":0.0049},{"id":"camina-09","t":0.6665,"luz":0.0116},{"id":"camina-10","t":0.7498,"luz":0.017},{"id":"camina-11","t":0.8331,"luz":-0.0046},{"id":"camina-12","t":0.9165,"luz":-0.0202},{"id":"camina-13","t":0.9998,"luz":-0.0159},{"id":"camina-14","t":1.0831,"luz":-0.0237},{"id":"camina-15","t":1.1665,"luz":-0.0152},{"id":"camina-16","t":1.2498,"luz":0.0121},{"id":"camina-17","t":1.3331,"luz":0.0072},{"id":"camina-18","t":1.4165,"luz":-0.012},{"id":"camina-19","t":1.4998,"luz":0.006}];
+    for (const e of exposures) tl.set("#" + e.id, { "--hf-color-grading-exposure": e.luz }, e.t);
+    window.__timelines["camina"] = tl;
+  </script>
+</template>
