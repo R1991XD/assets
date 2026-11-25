@@ -1,7 +1,7 @@
 {
   "_doc": "Exposure sheet (X-sheet) of the shot. Each exposure shows one drawing for N frames at 24 fps (2 = 'on twos'). source/build_xsheet.py turns it into compositions/nico-saluda.html.",
   "fps": 24,
-  "frames": 72,
+  "frames": 342,
   "canvas": [
     1920,
     1080
@@ -40,11 +40,9 @@
     }
   },
   "grading": {
-    "_doc": "HyperFrames media-treatment patches (validated with `hyperframes media-treatment --dry-run`). Plate: vignette + film grain. Cels: warm the puppet toward the golden-hour plate + the same grain.",
+    "_doc": "HyperFrames media-treatment patches (validated with `hyperframes media-treatment --dry-run`). Media: film grain; cels: warm the puppet toward the golden-hour plate + the same grain. The lens vignette is a frame-fixed overlay (assets/fx/vineta.png) so camera moves do not zoom it.",
     "plate": {
       "details": {
-        "vignette": 0.22,
-        "vignetteFeather": 0.7,
         "grain": 0.12,
         "grainSize": 0.2,
         "grainRoughness": 0.45
@@ -191,6 +189,24 @@
     {
       "drawing": "wave_2_out",
       "frames": 2
+    }
+  ],
+  "xsheet_frames": 72,
+  "extra_scenes": [
+    {
+      "id": "acercamiento",
+      "label": "push-in on Nico (stepped camera, on twos)",
+      "frames": 30
+    },
+    {
+      "id": "primer-plano",
+      "label": "close-up (PP) with replacement faces",
+      "frames": 64
+    },
+    {
+      "id": "alejamiento",
+      "label": "pull-out to the aerial village + 'te amo cerdita' drawn letter by letter",
+      "frames": 176
     }
   ]
 }

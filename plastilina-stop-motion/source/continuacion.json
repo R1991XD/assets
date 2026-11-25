@@ -1,0 +1,298 @@
+{
+  "_doc": "Continuation after the x-sheet part (frames 73-342). Frames at 24 fps; camera steps on twos. source/build_continuacion.py turns this into compositions/acercamiento.html, primer-plano.html and alejamiento.html.",
+  "eye_midpoints": {
+    "_doc": "midpoint between the eye beads, measured on assets/nico cutouts (px)",
+    "nico_master": [
+      516,
+      547.5
+    ],
+    "wave_2_out": [
+      312.5,
+      290
+    ]
+  },
+  "acercamiento": {
+    "frames": 30,
+    "zoom_final": 2.3,
+    "cels": [
+      [
+        "wave_3_in",
+        4,
+        "the last wave"
+      ],
+      [
+        "wave_1_anticip",
+        4,
+        "hand comes down"
+      ],
+      [
+        "nico_master",
+        22,
+        "looks into the lens while the camera comes closer"
+      ]
+    ]
+  },
+  "primer_plano": {
+    "frames": 64,
+    "escala": 0.585,
+    "ojos_en_imagen": [
+      707.5,
+      995.5
+    ],
+    "ojos_en_pantalla": [
+      955,
+      560
+    ],
+    "zoom_final": 1.06,
+    "paralaje_fondo": 0.35,
+    "fondo_aumento": 3.7,
+    "fondo_desenfoque": 10,
+    "caras": [
+      [
+        "pp_s0",
+        18,
+        "looks into the lens"
+      ],
+      [
+        "pp_s1",
+        4,
+        "blink"
+      ],
+      [
+        "pp_s0",
+        12,
+        ""
+      ],
+      [
+        "pp_s2",
+        6,
+        "lights up"
+      ],
+      [
+        "pp_s3",
+        24,
+        "happy squint and blush"
+      ]
+    ]
+  },
+  "alejamiento": {
+    "frames": 176,
+    "frames_alejamiento": 60,
+    "zoom_inicial": 2.3,
+    "k_puerta": 3.3,
+    "puerta_plano": [
+      725,
+      425
+    ],
+    "puerta_aereo": [
+      911,
+      797
+    ],
+    "cara_ancla": "wave_2_out",
+    "pies_ancla": "wave_2_out",
+    "disolver_zoom": [
+      0.95,
+      0.6
+    ],
+    "encoger_nico": 0.8,
+    "fundido_borde": 0.07,
+    "cels": [
+      [
+        "wave_4_blink",
+        4,
+        "happy, as in the close-up"
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_4_blink",
+        4,
+        "happy blink"
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_4_blink",
+        4,
+        "happy blink"
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_3_in",
+        4,
+        ""
+      ],
+      [
+        "wave_2_out",
+        4,
+        ""
+      ],
+      [
+        "wave_1_anticip",
+        4,
+        "hand comes down"
+      ],
+      [
+        "nico_master",
+        44,
+        "rests, looking up at us"
+      ]
+    ],
+    "texto": {
+      "escala": 1.1,
+      "linea_base": 250,
+      "grosor": 18,
+      "color": "#ea7f9e",
+      "material": {
+        "ondulacion": 0.12,
+        "huellas": 0.04,
+        "frecuencia_huellas": 0.45,
+        "brillo": 0.28
+      },
+      "pausa_palabra": 60,
+      "pasos": 36,
+      "desde_frame": 56
+    }
+  },
+  "vineta": {
+    "inicio": 0.55,
+    "fin": 1.45,
+    "curva": 1.6,
+    "opacidad": 0.55,
+    "color": [
+      20,
+      10,
+      5
+    ]
+  }
+}

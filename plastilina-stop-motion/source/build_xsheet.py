@@ -191,13 +191,15 @@ def place():
         placed.append({"k": i + 1, "name": name, "s": s, "m": m, "left": left, "top": top,
                        "frame": frame, "frames": ex["frames"], "note": ex.get("note", ""), "luz": luz[i]})
         frame += ex["frames"]
-    assert frame == X["frames"], f"x-sheet covers {frame} frames, expected {X['frames']}"
+    xf = X.get("xsheet_frames", X["frames"])
+    assert frame == xf, f"x-sheet covers {frame} frames, expected {xf}"
     return placed
 
 
 def write(placed):
     W, H = X["canvas"]
-    total = X["frames"] / X["fps"]
+    total = X["frames"] / X["fps"]                     # whole film
+    xframes = X.get("xsheet_frames", X["frames"])       # part driven by the exposure sheet
     hosts, k, baked = [], 0, {}
     cel_grading = grading_attr(X["grading"].get("cels"))
     for sc in X["scenes"]:
@@ -206,6 +208,7 @@ def write(placed):
         f0, f1 = group[0]["frame"], group[-1]["frame"] + group[-1]["frames"]
         h_start = g_start(f0)
         h_end = total if f1 >= X["frames"] else g_start(f1)
+        assert f1 <= xframes
         h_dur = round(h_end - h_start, 4)
         cels, expo = [], []
         for j, p in enumerate(group):
@@ -235,11 +238,25 @@ def write(placed):
             f'        data-start="{h_start:g}"\n        data-duration="{h_dur:g}"\n'
             f'        data-track-index="1"\n        data-track-kind="graphics"\n'
             f'        data-width="{W}"\n        data-height="{H}"\n      ></div>')
+    f0 = xframes
+    for sc in X.get("extra_scenes", []):
+        h_start = g_start(f0)
+        h_end = total if f0 + sc["frames"] >= X["frames"] else g_start(f0 + sc["frames"])
+        hosts.append(
+            f'      <!-- {sc["label"]}: frames {f0 + 1}-{f0 + sc["frames"]} -->\n'
+            f'      <div\n        id="{sc["id"]}"\n        data-composition-id="{sc["id"]}"\n'
+            f'        data-composition-src="compositions/{sc["id"]}.html"\n'
+            f'        data-start="{h_start:g}"\n        data-duration="{round(h_end - h_start, 4):g}"\n'
+            f'        data-track-index="1"\n        data-track-kind="graphics"\n'
+            f'        data-width="{W}"\n        data-height="{H}"\n      ></div>')
+        f0 += sc["frames"]
     plate_attr = (grading_attr(X["grading"].get("plate"))
                   + '\n        style="--hf-color-grading-exposure: 0"')
     luz = [[g_start(p["frame"]), p["luz"]] for p in placed]
     idx = ((SRC / "index.template.html").read_text()
            .replace("{{W}}", str(W)).replace("{{H}}", str(H)).replace("{{DUR}}", f"{total:g}")
+           .replace("{{XDUR}}", f"{g_start(xframes) if xframes < X['frames'] else total:g}")
+           .replace("{{HOST_IDS}}", ", ".join(f"#{sc['id']}" for sc in X["scenes"] + X.get("extra_scenes", [])))
            .replace("{{FPS}}", str(X["fps"])).replace("{{FRAMES}}", str(X["frames"]))
            .replace("{{PLATE_GRADING}}", plate_attr).replace("{{HOSTS}}", "\n".join(hosts))
            .replace("{{LUZ_JSON}}", json.dumps(luz, separators=(",", ":"))))

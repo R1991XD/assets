@@ -32,15 +32,25 @@
         object-fit: cover;
         z-index: 1;
       }
-      #camina,
-      #saluda {
+      {{HOST_IDS}} {
         z-index: 2;
+      }
+      /* Lens vignette, fixed to the frame (camera moves must not zoom it). */
+      #vineta {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: {{W}}px;
+        height: {{H}}px;
+        z-index: 9;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
-    <!-- {{DUR}} s at {{FPS}} fps ({{FRAMES}} frames), one locked-off shot on a clay miniature set:
-         Nico walks along the cobbles (scene "camina"), stops and waves (scene "saluda"). -->
+    <!-- {{DUR}} s at {{FPS}} fps ({{FRAMES}} frames) on a clay miniature set: Nico walks along the cobbles
+         ("camina"), stops and waves ("saluda"); the camera pushes in to a close-up ("acercamiento",
+         "primer-plano") and pulls back to the whole village while "te amo cerdita" is drawn ("alejamiento"). -->
     <div
       id="root"
       data-composition-id="main"
@@ -56,11 +66,20 @@
         src="assets/plate/plato.jpg"
         alt="Plató de plastilina: acera empedrada frente a una casita de ladrillo"
         data-start="0"
-        data-duration="{{DUR}}"
+        data-duration="{{XDUR}}"
         data-track-index="0"
         {{PLATE_GRADING}}
       />
 {{HOSTS}}
+      <img
+        id="vineta"
+        class="clip"
+        src="assets/fx/vineta.png"
+        alt=""
+        data-start="0"
+        data-duration="{{DUR}}"
+        data-track-index="2"
+      />
     </div>
     <script>
       window.__timelines = window.__timelines || {};

@@ -1,0 +1,267 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #24170f;
+    }
+    #alejamiento-aereo-capa,
+    #alejamiento-plato-capa,
+    #alejamiento-nico-capa {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    #alejamiento-aereo,
+    #alejamiento-plato,
+    .alejamiento-cel {
+      position: absolute;
+    }
+    #alejamiento-texto {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 5;
+    }
+  </style>
+  <div id="root" data-composition-id="alejamiento" data-width="1920" data-height="1080">
+    <!-- one virtual camera for three nested sets: the aerial village, the wide set (melting into it,
+         matched on the green door) and Nico, who keeps waving goodbye -->
+    <div id="alejamiento-aereo-capa" data-layout-allow-overflow>
+      <img id="alejamiento-aereo" class="clip" src="assets/pueblo/aereo.jpg" alt="El pueblo de plastilina desde el aire"
+        data-start="0" data-duration="7.33333" data-track-index="0"
+        data-color-grading='{"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 0; top: 0; width: 1920px; height: 1080px; z-index: 1; --hf-color-grading-exposure: 0" />
+    </div>
+    <div id="alejamiento-plato-capa" data-layout-allow-overflow>
+      <img id="alejamiento-plato" class="clip" src="assets/pueblo/plato_fundido.png" alt="Plató"
+        data-start="0" data-duration="7.33333" data-track-index="2"
+        data-color-grading='{"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 0; top: 0; width: 1920px; height: 1080px; z-index: 2; --hf-color-grading-exposure: 0" />
+    </div>
+    <div id="alejamiento-nico-capa" data-layout-allow-overflow>
+      <!-- frames 1-4 (4 f) · happy, as in the close-up -->
+      <img id="alejamiento-01" class="clip alejamiento-cel" src="assets/cels/wave_4_blink.png" alt="" data-start="0" data-duration="0.1665" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 308.3px; top: 377.2px; width: 629.9px; height: 558.7px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 5-8 (4 f) -->
+      <img id="alejamiento-02" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="0.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 9-12 (4 f) -->
+      <img id="alejamiento-03" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="0.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 13-16 (4 f) -->
+      <img id="alejamiento-04" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="0.4998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 17-20 (4 f) -->
+      <img id="alejamiento-05" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="0.6665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 21-24 (4 f) -->
+      <img id="alejamiento-06" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="0.8331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 25-28 (4 f) -->
+      <img id="alejamiento-07" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="0.9998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 29-32 (4 f) -->
+      <img id="alejamiento-08" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="1.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 33-36 (4 f) -->
+      <img id="alejamiento-09" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="1.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 37-40 (4 f) -->
+      <img id="alejamiento-10" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="1.4998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 41-44 (4 f) -->
+      <img id="alejamiento-11" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="1.6665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 45-48 (4 f) -->
+      <img id="alejamiento-12" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="1.8331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 49-52 (4 f) · happy blink -->
+      <img id="alejamiento-13" class="clip alejamiento-cel" src="assets/cels/wave_4_blink.png" alt="" data-start="1.9998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 308.3px; top: 377.2px; width: 629.9px; height: 558.7px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 53-56 (4 f) -->
+      <img id="alejamiento-14" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="2.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 57-60 (4 f) -->
+      <img id="alejamiento-15" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="2.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 61-64 (4 f) -->
+      <img id="alejamiento-16" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="2.4998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 65-68 (4 f) -->
+      <img id="alejamiento-17" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="2.6665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 69-72 (4 f) -->
+      <img id="alejamiento-18" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="2.8331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 73-76 (4 f) -->
+      <img id="alejamiento-19" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="2.9998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 77-80 (4 f) -->
+      <img id="alejamiento-20" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="3.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 81-84 (4 f) -->
+      <img id="alejamiento-21" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="3.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 85-88 (4 f) -->
+      <img id="alejamiento-22" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="3.4998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 89-92 (4 f) -->
+      <img id="alejamiento-23" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="3.6665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 93-96 (4 f) -->
+      <img id="alejamiento-24" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="3.8331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 97-100 (4 f) · happy blink -->
+      <img id="alejamiento-25" class="clip alejamiento-cel" src="assets/cels/wave_4_blink.png" alt="" data-start="3.9998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 308.3px; top: 377.2px; width: 629.9px; height: 558.7px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 101-104 (4 f) -->
+      <img id="alejamiento-26" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="4.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 105-108 (4 f) -->
+      <img id="alejamiento-27" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="4.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 109-112 (4 f) -->
+      <img id="alejamiento-28" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="4.4998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 113-116 (4 f) -->
+      <img id="alejamiento-29" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="4.6665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 117-120 (4 f) -->
+      <img id="alejamiento-30" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="4.8331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 121-124 (4 f) -->
+      <img id="alejamiento-31" class="clip alejamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="4.9998" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 125-128 (4 f) -->
+      <img id="alejamiento-32" class="clip alejamiento-cel" src="assets/cels/wave_2_out.png" alt="" data-start="5.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 304.6px; top: 376.3px; width: 635.9px; height: 559.6px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 129-132 (4 f) · hand comes down -->
+      <img id="alejamiento-33" class="clip alejamiento-cel" src="assets/cels/wave_1_anticip.png" alt="" data-start="5.3331" data-duration="0.1667" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 312.2px; top: 375.8px; width: 629.5px; height: 560.0px; z-index: 3; --hf-color-grading-exposure: 0" />
+      <!-- frames 133-176 (44 f) · rests, looking up at us -->
+      <img id="alejamiento-34" class="clip alejamiento-cel" src="assets/cels/nico_master.png" alt="" data-start="5.4998" data-duration="1.8335" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 320.2px; top: 389.2px; width: 603.3px; height: 544.8px; z-index: 3; --hf-color-grading-exposure: 0" />
+    </div>
+    <!-- "te amo cerdita": a plasticine coil laid letter by letter (paths = the pen's route) -->
+    <svg id="alejamiento-texto" width="1920" height="1080" viewBox="0 0 1920 1080" aria-hidden="true">
+      <defs>
+        <filter id="alejamiento-plastilina" x="-10%" y="-40%" width="120%" height="180%">
+          <feTurbulence id="alejamiento-ruido-forma" type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="1" result="ondula" />
+          <feDisplacementMap in="SourceGraphic" in2="ondula" scale="2.16" xChannelSelector="R" yChannelSelector="G" result="churro" />
+          <feGaussianBlur in="churro" stdDeviation="5.40" result="altura0" />
+          <feTurbulence id="alejamiento-ruido-huellas" type="fractalNoise" baseFrequency="0.45" numOctaves="2" seed="1" result="huellas" />
+          <feComposite in="huellas" in2="altura0" operator="arithmetic" k2="0.04" k3="1" result="altura" />
+          <feDiffuseLighting in="altura" surfaceScale="7.20" diffuseConstant="1.2" lighting-color="#fff2e2" result="difusa">
+            <feDistantLight azimuth="-50" elevation="45" />
+          </feDiffuseLighting>
+          <feSpecularLighting in="altura" surfaceScale="7.20" specularConstant="0.28" specularExponent="9" lighting-color="#fff6ee" result="brillo">
+            <feDistantLight azimuth="-50" elevation="55" />
+          </feSpecularLighting>
+          <feComposite in="difusa" in2="churro" operator="arithmetic" k1="1" result="iluminado" />
+          <feComposite in="brillo" in2="churro" operator="in" result="brillo2" />
+          <feComposite in="iluminado" in2="brillo2" operator="arithmetic" k2="1" k3="1" result="arcilla" />
+          <feComposite in="arcilla" in2="churro" operator="in" result="arcilla2" />
+          <feDropShadow in="arcilla2" dx="-5" dy="8" stdDeviation="5" flood-color="#3a1a10" flood-opacity="0.5" />
+        </filter>
+      </defs>
+      <g transform="translate(274.7 250) scale(1.1)" fill="none" stroke="#ea7f9e" stroke-width="18"
+        stroke-linecap="round" stroke-linejoin="round" filter="url(#alejamiento-plastilina)">
+          <path class="alejamiento-trazo" data-orden="0" data-glifo="t0" transform="translate(0 0)" d="M 30 -172 L 30 -26 C 30 -4 48 4 66 -8 C 74 -14 80 -22 86 -30" />
+          <path class="alejamiento-trazo" data-orden="1" data-glifo="t0" transform="translate(0 0)" d="M 6 -104 C 25 -108 45 -108 62 -106" />
+          <path class="alejamiento-trazo" data-orden="2" data-glifo="e" data-palabra-fin="1" transform="translate(86 0)" d="M 0 -30 C 25 -40 58 -58 62 -80 C 65 -97 52 -106 38 -104 C 16 -100 6 -72 8 -46 C 10 -14 30 4 54 -2 C 68 -6 78 -16 86 -28" />
+          <path class="alejamiento-trazo" data-orden="3" data-glifo="a0" transform="translate(218 0)" d="M 64 -88 C 54 -104 26 -104 14 -80 C 2 -56 6 -12 30 -4 C 50 2 62 -20 66 -46 L 70 -100 L 66 -24 C 64 -4 76 4 90 -6 C 96 -11 102 -20 106 -28" />
+          <path class="alejamiento-trazo" data-orden="4" data-glifo="m" transform="translate(324 0)" d="M 0 -28 C 6 -50 12 -80 16 -98 L 16 -2 C 18 -50 26 -100 46 -100 C 62 -100 64 -80 64 -60 L 64 -2 C 66 -50 74 -100 94 -100 C 110 -100 112 -80 112 -60 L 112 -24 C 112 -4 124 4 138 -6 C 144 -11 150 -20 154 -28" />
+          <path class="alejamiento-trazo" data-orden="5" data-glifo="o" data-palabra-fin="1" transform="translate(478 0)" d="M 0 -28 C 14 -50 30 -86 52 -98 C 36 -106 12 -96 8 -64 C 4 -30 20 -2 42 -2 C 66 -2 74 -34 70 -64 C 67 -88 58 -100 50 -98 C 58 -95 66 -96 74 -100" />
+          <path class="alejamiento-trazo" data-orden="6" data-glifo="c0" transform="translate(602 0)" d="M 64 -84 C 60 -100 40 -106 24 -96 C 6 -84 2 -46 12 -22 C 22 0 46 4 64 -8 C 72 -14 80 -22 86 -30" />
+          <path class="alejamiento-trazo" data-orden="7" data-glifo="e" transform="translate(688 0)" d="M 0 -30 C 25 -40 58 -58 62 -80 C 65 -97 52 -106 38 -104 C 16 -100 6 -72 8 -46 C 10 -14 30 4 54 -2 C 68 -6 78 -16 86 -28" />
+          <path class="alejamiento-trazo" data-orden="8" data-glifo="r" transform="translate(774 0)" d="M 0 -30 C 8 -52 14 -80 18 -100 C 24 -92 34 -90 44 -98 C 46 -76 42 -44 42 -22 C 42 -4 54 4 68 -6 C 74 -11 80 -20 84 -28" />
+          <path class="alejamiento-trazo" data-orden="9" data-glifo="d" transform="translate(858 0)" d="M 0 -28 C 10 -60 32 -100 64 -92 C 52 -106 24 -102 14 -78 C 2 -52 8 -10 32 -4 C 52 0 64 -24 68 -50 C 70 -100 80 -170 76 -182 C 72 -186 66 -170 66 -100 L 66 -22 C 66 -2 80 4 94 -6 C 100 -11 106 -20 110 -28" />
+          <path class="alejamiento-trazo" data-orden="10" data-glifo="i" transform="translate(968 0)" d="M 0 -28 C 6 -52 12 -80 16 -100 L 16 -22 C 16 -2 28 4 42 -6 C 48 -11 54 -20 58 -28" />
+          <path class="alejamiento-trazo" data-orden="11" data-glifo="i" transform="translate(968 0)" d="M 17 -140 L 17.5 -140.5" />
+          <path class="alejamiento-trazo" data-orden="12" data-glifo="t" transform="translate(1026 0)" d="M 0 -28 C 8 -60 18 -120 26 -172 L 26 -22 C 26 -2 40 4 54 -6 C 60 -11 66 -20 70 -28" />
+          <path class="alejamiento-trazo" data-orden="13" data-glifo="t" transform="translate(1026 0)" d="M 4 -104 C 20 -108 38 -108 54 -106" />
+          <path class="alejamiento-trazo" data-orden="14" data-glifo="aZ" transform="translate(1096 0)" d="M 0 -28 C 10 -60 32 -100 64 -92 C 52 -106 24 -102 14 -78 C 2 -52 8 -10 32 -4 C 52 0 64 -24 68 -50 L 70 -100 L 68 -24 C 66 -4 80 4 98 -4 C 120 -14 140 -40 150 -60" />
+      </g>
+    </svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // virtual camera, one photographed step every 2 frames: [time, x, y, scale] per layer
+    const aereo = [[0.0,-6197.97,-5703.88,7.59],[0.0831,-6164.65,-5674.11,7.5535],[0.1665,-6065.64,-5585.67,7.44506],[0.2498,-5903.79,-5441.09,7.26778],[0.3331,-5683.65,-5244.43,7.02665],[0.4165,-5411.3,-5001.15,6.72835],[0.4998,-5094.09,-4717.78,6.3809],[0.5831,-4740.26,-4401.7,5.99334],[0.6665,-4358.61,-4060.77,5.57531],[0.7498,-3958.15,-3703.04,5.13668],[0.8331,-3547.74,-3336.42,4.68716],[0.9165,-3135.79,-2968.42,4.23594],[0.9998,-2729.97,-2605.9,3.79143],[1.0831,-2337.0,-2254.86,3.36101],[1.1665,-1935.01,-1870.38,2.95087],[1.2498,-1559.34,-1507.25,2.57212],[1.3331,-1248.02,-1206.33,2.25825],[1.4165,-993.74,-960.54,2.00188],[1.4998,-785.37,-759.14,1.79181],[1.5831,-614.28,-593.76,1.61932],[1.6665,-473.72,-457.9,1.47761],[1.7498,-358.42,-346.45,1.36136],[1.8331,-264.24,-255.41,1.26641],[1.9165,-187.95,-181.67,1.18949],[1.9998,-127.02,-122.78,1.12806],[2.0831,-79.52,-76.86,1.08017],[2.1665,-43.97,-42.51,1.04434],[2.2498,-19.31,-18.66,1.01947],[2.3331,-4.79,-4.63,1.00483],[2.4165,0.0,0.0,1.0],[2.4998,0.0,0.0,1.0],[2.5831,0.0,0.0,1.0],[2.6665,0.0,0.0,1.0],[2.7498,0.0,0.0,1.0],[2.8331,0.0,0.0,1.0],[2.9165,0.0,0.0,1.0],[2.9998,0.0,0.0,1.0],[3.0831,0.0,0.0,1.0],[3.1665,0.0,0.0,1.0],[3.2498,0.0,0.0,1.0],[3.3331,0.0,0.0,1.0],[3.4165,0.0,0.0,1.0],[3.4998,0.0,0.0,1.0],[3.5831,0.0,0.0,1.0],[3.6665,0.0,0.0,1.0],[3.7498,0.0,0.0,1.0],[3.8331,0.0,0.0,1.0],[3.9165,0.0,0.0,1.0],[3.9998,0.0,0.0,1.0],[4.0831,0.0,0.0,1.0],[4.1665,0.0,0.0,1.0],[4.2498,0.0,0.0,1.0],[4.3331,0.0,0.0,1.0],[4.4165,0.0,0.0,1.0],[4.4998,0.0,0.0,1.0],[4.5831,0.0,0.0,1.0],[4.6665,0.0,0.0,1.0],[4.7498,0.0,0.0,1.0],[4.8331,0.0,0.0,1.0],[4.9165,0.0,0.0,1.0],[4.9998,0.0,0.0,1.0],[5.0831,0.0,0.0,1.0],[5.1665,0.0,0.0,1.0],[5.2498,0.0,0.0,1.0],[5.3331,0.0,0.0,1.0],[5.4165,0.0,0.0,1.0],[5.4998,0.0,0.0,1.0],[5.5831,0.0,0.0,1.0],[5.6665,0.0,0.0,1.0],[5.7498,0.0,0.0,1.0],[5.8331,0.0,0.0,1.0],[5.9165,0.0,0.0,1.0],[5.9998,0.0,0.0,1.0],[6.0831,0.0,0.0,1.0],[6.1665,0.0,0.0,1.0],[6.2498,0.0,0.0,1.0],[6.3331,0.0,0.0,1.0],[6.4165,0.0,0.0,1.0],[6.4998,0.0,0.0,1.0],[6.5831,0.0,0.0,1.0],[6.6665,0.0,0.0,1.0],[6.7498,0.0,0.0,1.0],[6.8331,0.0,0.0,1.0],[6.9165,0.0,0.0,1.0],[6.9998,0.0,0.0,1.0],[7.0831,0.0,0.0,1.0],[7.1665,0.0,0.0,1.0],[7.2498,0.0,0.0,1.0]];
+    const plano = [[0.0,-950.98,-632.15,2.3],[0.0831,-942.89,-626.77,2.28894],[0.1665,-918.85,-610.79,2.25608],[0.2498,-879.55,-584.67,2.20236],[0.3331,-826.1,-549.14,2.12929],[0.4165,-759.97,-505.18,2.03889],[0.4998,-682.95,-453.98,1.93361],[0.5831,-597.04,-396.87,1.81616],[0.6665,-504.38,-335.28,1.68949],[0.7498,-407.14,-270.64,1.55657],[0.8331,-307.5,-204.4,1.42035],[0.9165,-207.47,-137.91,1.28362],[0.9998,-108.94,-72.41,1.14892],[1.0831,-13.53,-8.99,1.01849],[1.1665,104.94,101.43,0.8942],[1.2498,218.78,211.47,0.77943],[1.3331,313.12,302.66,0.68432],[1.4165,390.17,377.14,0.60663],[1.4998,453.31,438.17,0.54297],[1.5831,505.16,488.28,0.4907],[1.6665,547.75,529.45,0.44776],[1.7498,582.69,563.23,0.41253],[1.8331,611.23,590.81,0.38376],[1.9165,634.35,613.16,0.36045],[1.9998,652.81,631.01,0.34184],[2.0831,667.21,644.92,0.32733],[2.1665,677.98,655.33,0.31647],[2.2498,685.45,662.56,0.30893],[2.3331,689.85,666.81,0.30449],[2.4165,691.3,668.21,0.30303],[2.4998,691.3,668.21,0.30303],[2.5831,691.3,668.21,0.30303],[2.6665,691.3,668.21,0.30303],[2.7498,691.3,668.21,0.30303],[2.8331,691.3,668.21,0.30303],[2.9165,691.3,668.21,0.30303],[2.9998,691.3,668.21,0.30303],[3.0831,691.3,668.21,0.30303],[3.1665,691.3,668.21,0.30303],[3.2498,691.3,668.21,0.30303],[3.3331,691.3,668.21,0.30303],[3.4165,691.3,668.21,0.30303],[3.4998,691.3,668.21,0.30303],[3.5831,691.3,668.21,0.30303],[3.6665,691.3,668.21,0.30303],[3.7498,691.3,668.21,0.30303],[3.8331,691.3,668.21,0.30303],[3.9165,691.3,668.21,0.30303],[3.9998,691.3,668.21,0.30303],[4.0831,691.3,668.21,0.30303],[4.1665,691.3,668.21,0.30303],[4.2498,691.3,668.21,0.30303],[4.3331,691.3,668.21,0.30303],[4.4165,691.3,668.21,0.30303],[4.4998,691.3,668.21,0.30303],[4.5831,691.3,668.21,0.30303],[4.6665,691.3,668.21,0.30303],[4.7498,691.3,668.21,0.30303],[4.8331,691.3,668.21,0.30303],[4.9165,691.3,668.21,0.30303],[4.9998,691.3,668.21,0.30303],[5.0831,691.3,668.21,0.30303],[5.1665,691.3,668.21,0.30303],[5.2498,691.3,668.21,0.30303],[5.3331,691.3,668.21,0.30303],[5.4165,691.3,668.21,0.30303],[5.4998,691.3,668.21,0.30303],[5.5831,691.3,668.21,0.30303],[5.6665,691.3,668.21,0.30303],[5.7498,691.3,668.21,0.30303],[5.8331,691.3,668.21,0.30303],[5.9165,691.3,668.21,0.30303],[5.9998,691.3,668.21,0.30303],[6.0831,691.3,668.21,0.30303],[6.1665,691.3,668.21,0.30303],[6.2498,691.3,668.21,0.30303],[6.3331,691.3,668.21,0.30303],[6.4165,691.3,668.21,0.30303],[6.4998,691.3,668.21,0.30303],[6.5831,691.3,668.21,0.30303],[6.6665,691.3,668.21,0.30303],[6.7498,691.3,668.21,0.30303],[6.8331,691.3,668.21,0.30303],[6.9165,691.3,668.21,0.30303],[6.9998,691.3,668.21,0.30303],[7.0831,691.3,668.21,0.30303],[7.1665,691.3,668.21,0.30303],[7.2498,691.3,668.21,0.30303]];
+    const nico = [[0.0,-950.98,-632.15,2.3],[0.0831,-942.89,-626.77,2.28894],[0.1665,-918.85,-610.79,2.25608],[0.2498,-879.55,-584.67,2.20236],[0.3331,-826.1,-549.14,2.12929],[0.4165,-759.97,-505.18,2.03889],[0.4998,-682.95,-453.98,1.93361],[0.5831,-597.04,-396.87,1.81616],[0.6665,-504.38,-335.28,1.68949],[0.7498,-407.14,-270.64,1.55657],[0.8331,-307.5,-204.4,1.42035],[0.9165,-207.47,-137.91,1.28362],[0.9998,-108.94,-72.41,1.14892],[1.0831,-13.53,-8.99,1.01849],[1.1665,124.0,122.63,0.87065],[1.2498,273.1,271.89,0.7123],[1.3331,392.18,390.59,0.58662],[1.4165,486.01,483.72,0.48821],[1.4998,541.19,535.91,0.43438],[1.5831,584.58,576.61,0.39256],[1.6665,620.22,610.05,0.35821],[1.7498,649.46,637.48,0.33003],[1.8331,673.34,659.89,0.30701],[1.9165,692.69,678.04,0.28836],[1.9998,708.14,692.54,0.27347],[2.0831,720.18,703.84,0.26186],[2.1665,729.2,712.3,0.25317],[2.2498,735.45,718.16,0.24714],[2.3331,739.13,721.62,0.2436],[2.4165,740.35,722.76,0.24242],[2.4998,740.35,722.76,0.24242],[2.5831,740.35,722.76,0.24242],[2.6665,740.35,722.76,0.24242],[2.7498,740.35,722.76,0.24242],[2.8331,740.35,722.76,0.24242],[2.9165,740.35,722.76,0.24242],[2.9998,740.35,722.76,0.24242],[3.0831,740.35,722.76,0.24242],[3.1665,740.35,722.76,0.24242],[3.2498,740.35,722.76,0.24242],[3.3331,740.35,722.76,0.24242],[3.4165,740.35,722.76,0.24242],[3.4998,740.35,722.76,0.24242],[3.5831,740.35,722.76,0.24242],[3.6665,740.35,722.76,0.24242],[3.7498,740.35,722.76,0.24242],[3.8331,740.35,722.76,0.24242],[3.9165,740.35,722.76,0.24242],[3.9998,740.35,722.76,0.24242],[4.0831,740.35,722.76,0.24242],[4.1665,740.35,722.76,0.24242],[4.2498,740.35,722.76,0.24242],[4.3331,740.35,722.76,0.24242],[4.4165,740.35,722.76,0.24242],[4.4998,740.35,722.76,0.24242],[4.5831,740.35,722.76,0.24242],[4.6665,740.35,722.76,0.24242],[4.7498,740.35,722.76,0.24242],[4.8331,740.35,722.76,0.24242],[4.9165,740.35,722.76,0.24242],[4.9998,740.35,722.76,0.24242],[5.0831,740.35,722.76,0.24242],[5.1665,740.35,722.76,0.24242],[5.2498,740.35,722.76,0.24242],[5.3331,740.35,722.76,0.24242],[5.4165,740.35,722.76,0.24242],[5.4998,740.35,722.76,0.24242],[5.5831,740.35,722.76,0.24242],[5.6665,740.35,722.76,0.24242],[5.7498,740.35,722.76,0.24242],[5.8331,740.35,722.76,0.24242],[5.9165,740.35,722.76,0.24242],[5.9998,740.35,722.76,0.24242],[6.0831,740.35,722.76,0.24242],[6.1665,740.35,722.76,0.24242],[6.2498,740.35,722.76,0.24242],[6.3331,740.35,722.76,0.24242],[6.4165,740.35,722.76,0.24242],[6.4998,740.35,722.76,0.24242],[6.5831,740.35,722.76,0.24242],[6.6665,740.35,722.76,0.24242],[6.7498,740.35,722.76,0.24242],[6.8331,740.35,722.76,0.24242],[6.9165,740.35,722.76,0.24242],[6.9998,740.35,722.76,0.24242],[7.0831,740.35,722.76,0.24242],[7.1665,740.35,722.76,0.24242],[7.2498,740.35,722.76,0.24242]];
+    const fundido = [[0.0,1],[0.0831,1],[0.1665,1],[0.2498,1],[0.3331,1],[0.4165,1],[0.4998,1],[0.5831,1],[0.6665,1],[0.7498,1],[0.8331,1],[0.9165,1],[0.9998,1],[1.0831,1],[1.1665,0.868],[1.2498,0.569],[1.3331,0.286],[1.4165,0.024],[1.4998,0],[1.5831,0],[1.6665,0],[1.7498,0],[1.8331,0],[1.9165,0],[1.9998,0],[2.0831,0],[2.1665,0],[2.2498,0],[2.3331,0],[2.4165,0],[2.4998,0],[2.5831,0],[2.6665,0],[2.7498,0],[2.8331,0],[2.9165,0],[2.9998,0],[3.0831,0],[3.1665,0],[3.2498,0],[3.3331,0],[3.4165,0],[3.4998,0],[3.5831,0],[3.6665,0],[3.7498,0],[3.8331,0],[3.9165,0],[3.9998,0],[4.0831,0],[4.1665,0],[4.2498,0],[4.3331,0],[4.4165,0],[4.4998,0],[4.5831,0],[4.6665,0],[4.7498,0],[4.8331,0],[4.9165,0],[4.9998,0],[5.0831,0],[5.1665,0],[5.2498,0],[5.3331,0],[5.4165,0],[5.4998,0],[5.5831,0],[5.6665,0],[5.7498,0],[5.8331,0],[5.9165,0],[5.9998,0],[6.0831,0],[6.1665,0],[6.2498,0],[6.3331,0],[6.4165,0],[6.4998,0],[6.5831,0],[6.6665,0],[6.7498,0],[6.8331,0],[6.9165,0],[6.9998,0],[7.0831,0],[7.1665,0],[7.2498,0]];
+    for (const [t, x, y, s] of aereo) tl.set("#alejamiento-aereo-capa", { x, y, scale: s, transformOrigin: "0 0" }, t);
+    for (const [t, x, y, s] of plano) tl.set("#alejamiento-plato-capa", { x, y, scale: s, transformOrigin: "0 0" }, t);
+    for (const [t, x, y, s] of nico) tl.set("#alejamiento-nico-capa", { x, y, scale: s, transformOrigin: "0 0" }, t);
+    for (const [t, o] of fundido) tl.set("#alejamiento-plato-capa", { opacity: o }, t);
+    const luz = [[0.0,-0.0113],[0.0831,-0.0164],[0.1665,-0.0074],[0.2498,-0.0028],[0.3331,0.0176],[0.4165,0.0245],[0.4998,0.0045],[0.5831,-0.0009],[0.6665,0.0087],[0.7498,0.005],[0.8331,0.0049],[0.9165,0.0058],[0.9998,0.0027],[1.0831,0.0159],[1.1665,0.0256],[1.2498,0.0239],[1.3331,0.0169],[1.4165,0.0246],[1.4998,0.0269],[1.5831,0.0253],[1.6665,0.0189],[1.7498,-0.0012],[1.8331,0.0074],[1.9165,-0.0069],[1.9998,0.0052],[2.0831,-0.0043],[2.1665,-0.0122],[2.2498,-0.0232],[2.3331,0.0069],[2.4165,-0.0001],[2.4998,0.0085],[2.5831,-0.0063],[2.6665,-0.017],[2.7498,-0.0065],[2.8331,-0.007],[2.9165,0.0104],[2.9998,-0.0111],[3.0831,-0.014],[3.1665,-0.0224],[3.2498,0.0044],[3.3331,-0.0025],[3.4165,-0.0053],[3.4998,-0.0076],[3.5831,0.0051],[3.6665,-0.0039],[3.7498,0.0035],[3.8331,-0.0048],[3.9165,-0.0032],[3.9998,-0.0079],[4.0831,0.0026],[4.1665,0.005],[4.2498,0.0057],[4.3331,0.0079],[4.4165,0.0105],[4.4998,0.008],[4.5831,-0.0034],[4.6665,0.0076],[4.7498,0.0128],[4.8331,0.016],[4.9165,0.0085],[4.9998,-0.0019],[5.0831,-0.0179],[5.1665,0.0073],[5.2498,-0.0078],[5.3331,-0.0173],[5.4165,-0.0118],[5.4998,0.0079],[5.5831,-0.0056],[5.6665,-0.0092],[5.7498,-0.0218],[5.8331,-0.0252],[5.9165,0.0048],[5.9998,-0.0119],[6.0831,-0.0164],[6.1665,-0.0033],[6.2498,-0.0024],[6.3331,-0.0061],[6.4165,-0.0039],[6.4998,0.0152],[6.5831,0.0054],[6.6665,0.0215],[6.7498,-0.0076],[6.8331,-0.0043],[6.9165,-0.0163],[6.9998,-0.0251],[7.0831,-0.0072],[7.1665,0.002],[7.2498,-0.0064]];
+    for (const [t, v] of luz) tl.set("#alejamiento-aereo, #alejamiento-plato, .alejamiento-cel", { "--hf-color-grading-exposure": v }, t);
+    // lettering: the coil grows on every step at a constant pen speed, letter after letter
+    const trazos = Array.from(document.querySelectorAll(".alejamiento-trazo"));
+    const largos = trazos.map((p) => p.getTotalLength());
+    const pausa = 60;                       // pen lift between words (path units)
+    const inicio = [];
+    let acumulado = 0;
+    trazos.forEach((p, i) => {
+      if (i > 0 && p.dataset.glifo !== trazos[i - 1].dataset.glifo && trazos[i - 1].dataset.palabraFin) acumulado += pausa;
+      inicio.push(acumulado);
+      acumulado += largos[i];
+    });
+    trazos.forEach((p, i) => tl.set(p, { strokeDasharray: largos[i] + " " + (largos[i] + 200), strokeDashoffset: largos[i] + 100 }, 0));
+    const pasos = 36, desde = 56;
+    for (let k = 1; k <= pasos; k++) {
+      const t = (desde + 2 * (k - 1)) / 24 - 0.0002;
+      const pluma = (acumulado * k) / pasos;
+      trazos.forEach((p, i) => {
+        const visto = Math.min(Math.max(pluma - inicio[i], 0), largos[i]);
+        const antes = Math.min(Math.max((acumulado * (k - 1)) / pasos - inicio[i], 0), largos[i]);
+        if (visto !== antes) tl.set(p, { strokeDashoffset: visto > 0 ? largos[i] - visto : largos[i] + 100 }, t);
+      });
+    }
+    // the clay "boils": a new noise seed on every photographed step once the coil appears
+    for (let f = desde; f < 176; f += 2) {
+      const t = f / 24 - 0.0002, semilla = 1 + ((f - desde) / 2) % 9;
+      tl.set("#alejamiento-ruido-forma, #alejamiento-ruido-huellas", { attr: { seed: semilla } }, t);
+    }
+    window.__timelines["alejamiento"] = tl;
+  </script>
+</template>

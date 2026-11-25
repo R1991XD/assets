@@ -1,0 +1,52 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #24170f;
+    }
+    #acercamiento-camara {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    #acercamiento-plato,
+    .acercamiento-cel {
+      position: absolute;
+    }
+  </style>
+  <div id="root" data-composition-id="acercamiento" data-width="1920" data-height="1080">
+    <!-- camera: a motion-control push-in photographed on twos (moved once per 2 frames) -->
+    <div id="acercamiento-camara" data-layout-allow-overflow>
+      <img id="acercamiento-plato" class="clip" src="assets/plate/plato.jpg" alt="Plató" data-start="0"
+        data-duration="1.25" data-track-index="0"
+        data-color-grading='{"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 0; top: 0; width: 1920px; height: 1080px; z-index: 1; --hf-color-grading-exposure: 0" />
+      <!-- frames 1-4 (4 f) · the last wave -->
+      <img id="acercamiento-01" class="clip acercamiento-cel" src="assets/cels/wave_3_in.png" alt="" data-start="0" data-duration="0.1665" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 309.7px; top: 376.7px; width: 630.4px; height: 559.1px; z-index: 2; --hf-color-grading-exposure: 0" />
+      <!-- frames 5-8 (4 f) · hand comes down -->
+      <img id="acercamiento-02" class="clip acercamiento-cel" src="assets/cels/wave_1_anticip.png" alt="" data-start="0.1665" data-duration="0.1666" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 312.2px; top: 375.8px; width: 629.5px; height: 560.0px; z-index: 2; --hf-color-grading-exposure: 0" />
+      <!-- frames 9-30 (22 f) · looks into the lens while the camera comes closer -->
+      <img id="acercamiento-03" class="clip acercamiento-cel" src="assets/cels/nico_master.png" alt="" data-start="0.3331" data-duration="0.9169" data-track-index="1"
+        data-color-grading='{"adjust":{"exposure":-0.06,"contrast":0.08,"highlights":-0.1,"temperature":0.16,"saturation":0.05},"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        style="left: 320.2px; top: 389.2px; width: 603.3px; height: 544.8px; z-index: 2; --hf-color-grading-exposure: 0" />
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // [time, x, y, scale] of the camera for every photographed step
+    const camara = [[0.0,-2.67,-1.92,1.00371],[0.0831,-10.73,-7.74,1.01492],[0.1665,-24.37,-17.57,1.03388],[0.2498,-43.89,-31.64,1.06102],[0.3331,-69.74,-50.28,1.09696],[0.4165,-102.54,-73.93,1.14255],[0.4998,-143.05,-103.14,1.19888],[0.5831,-192.29,-138.64,1.26734],[0.6665,-251.5,-181.33,1.34965],[0.7498,-322.24,-232.33,1.448],[0.8331,-406.44,-293.03,1.56505],[0.9165,-506.48,-365.16,1.70414],[0.9998,-625.34,-450.86,1.86938],[1.0831,-766.67,-552.76,2.06588],[1.1665,-935.07,-674.17,2.3]];
+    for (const [t, x, y, s] of camara) tl.set("#acercamiento-camara", { x, y, scale: s, transformOrigin: "0 0" }, t);
+    // set-light flicker, one value per photographed step, on every graded image
+    const luz = [[0.0,0.0123],[0.0831,0.0105],[0.1665,0.0006],[0.2498,-0.0018],[0.3331,-0.0029],[0.4165,0.002],[0.4998,-0.0038],[0.5831,0.0158],[0.6665,-0.0029],[0.7498,-0.012],[0.8331,0.0022],[0.9165,0.0125],[0.9998,0.0086],[1.0831,0.0198],[1.1665,0.0074]];
+    for (const [t, v] of luz) tl.set("#acercamiento-plato, .acercamiento-cel", { "--hf-color-grading-exposure": v }, t);
+    window.__timelines["acercamiento"] = tl;
+  </script>
+</template>

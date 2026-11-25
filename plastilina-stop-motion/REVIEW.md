@@ -1,4 +1,4 @@
-# REVIEW — Nico saluda (3 s, 24 fps)
+# REVIEW — Nico saluda (14,25 s, 24 fps)
 
 ## Decisiones creativas
 
@@ -72,3 +72,81 @@ cambiaría con más créditos: una sola generación de hoja de pasos con la pier
   ≈2,7 % en `delivery` con una amplitud casi igual. Hay que juzgar el look siempre con `delivery`.
 - **Telemetría desactivada.** Durante el trabajo se usó `HYPERFRAMES_NO_TELEMETRY=1` y no se enviaron
   notas de uso ni `feedback`.
+
+---
+
+# Continuación (fotogramas 73–342): acercamiento, primer plano y alejamiento aéreo
+
+## Decisiones creativas
+
+- **Acercamiento:** cuando termina el saludo, Nico baja la mano y mira a cámara mientras la cámara se le
+  acerca, acelerando. Se corta en el punto más rápido a un primer plano en el mismo eje. Es la técnica de
+  rodaje real: los planos cercanos se ruedan con una marioneta de "cabeza grande", no ampliando el plano
+  general, que a más de ~2,3× pierde nitidez.
+- **Primer plano:** la actuación sigue la regla de "leer, luego actuar". Mira a cámara (0,75 s), parpadea,
+  se ilumina con la sonrisa abierta y termina con los ojos felices y rubor (1 s). Así el mensaje del final
+  llega con causa.
+- **Alejamiento:** corte en movimiento al plano general mientras Nico se despide. La cámara se aleja sin
+  cortes hasta el pueblo entero, empalmando el plató con la toma aérea en la puerta verde. El texto
+  empieza a dibujarse justo cuando la cámara aterriza.
+- **Texto:** un churro de plastilina rosa (rosa por "cerdita") sobre el cielo, como letras de arcilla sobre
+  un cristal delante de la lente, técnica clásica de títulos en stop motion. Se descartaron dos opciones:
+  generarlo con IA, porque no se podría dibujar trazo a trazo, y una fuente tipográfica, porque no se
+  "escribe" como un lápiz.
+- **Descartados:** un fundido entre la cara del primer plano y la del plano general, porque dejaría doble
+  imagen de dos dibujos distintos (se cortó en su lugar), y la viñeta aplicada al plató, porque se
+  ampliaría con la cámara.
+
+## Qué se midió y qué solo se miró
+
+Medido sobre el MP4 decodificado (342 fotogramas):
+
+- **Paso en dos en toda la película.** En los fotogramas impares la imagen solo cambia por grano: diferencia
+  máxima 0,21–0,30 en las cinco escenas. Cámara, caras, Nico y texto avanzan solo en fotogramas pares.
+- **Cortes y disolución:** los mayores cambios son los dos cortes previstos (fotogramas 102 y 166) y la
+  disolución hacia la aérea (202–210).
+- **Corte acercamiento → primer plano:** los ojos quedan en el mismo eje, ≈(955, 540), al final del
+  acercamiento, en el primer plano y al empezar el alejamiento.
+- **Caras de reemplazo:** el pase de expresión está desplazado (−2, −2) px respecto a la base, el mismo
+  valor estimado en el gorro y en el abrigo.
+- `hyperframes check`: 0 errores. Las notas de desbordamiento de las capas de cámara se marcaron con
+  `data-layout-allow-overflow` porque son intencionadas.
+- Construcción determinista: `npm run build` reproduce byte a byte las composiciones renderizadas.
+
+Solo mirado:
+
+- Hojas de `snapshot --review`: momentos clave, las cuatro costuras y la vista de móvil (el texto se lee
+  a 360 px).
+- Hoja de contacto del render final y recortes al 100 %: cara, texto y Nico en la toma aérea.
+
+Nadie lo ha comprobado:
+
+- La reproducción en dispositivos reales.
+- El sonido: no hay pista de audio, y con 14,25 s HyperFrames no la exige.
+
+## Notas
+
+- **P1** · t=8,0–8,6 s · disolución plató → aérea · durante 3–4 fotos se ven los bordes fundidos del plató
+  sobre la toma aérea ampliada y algo blanda → con más tiempo, una toma aérea intermedia más cercana a
+  la casita (otra generación) daría nitidez en ese tramo · el empalme en la puerta funciona.
+- **P2** · t=9,3–14,25 s · Nico en la toma aérea es el dibujo a ras de suelo reducido; a ~120 px no se nota
+  que no está visto desde arriba, pero una pose cenital sería más exacta.
+- **P2** · texto · el trazado de las letras es propio. La "o" de "amo" es la más irregular; se puede
+  retocar en `source/letras.json` sin tocar nada más.
+- **P2** · sonido · un tintineo al aparecer cada letra y música suave reforzarían el final.
+
+## Avisos mantenidos a propósito
+
+- `timeline_track_too_dense` en las escenas nuevas (4, 6 y 36 elementos): cada exposición es un clip, igual
+  que en la hoja de exposición de la primera parte.
+
+## Notas técnicas para quien continúe
+
+- Cada escena nueva lleva su propio plató gradado. La media gradada en la raíz ocultaba elementos no
+  gradados de las sub-escenas; dentro de la misma escena, el SVG del texto sí se ve sobre media gradada
+  (verificado).
+- La cámara se mueve sobre envoltorios sin tiempo (`*-camara`, `*-capa`) que contienen los clips; nunca
+  se transforma un clip directamente.
+- HyperFrames 0.9.92 ya está publicado. El proyecto sigue fijado a 0.9.86, la versión con la que se
+  verificó; actualizarlo es decisión de quien lo mantenga
+  (`hyperframes --cli-version latest upgrade --project .`).

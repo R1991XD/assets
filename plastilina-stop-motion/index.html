@@ -32,20 +32,30 @@
         object-fit: cover;
         z-index: 1;
       }
-      #camina,
-      #saluda {
+      #camina, #saluda, #acercamiento, #primer-plano, #alejamiento {
         z-index: 2;
+      }
+      /* Lens vignette, fixed to the frame (camera moves must not zoom it). */
+      #vineta {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        z-index: 9;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
-    <!-- 3 s at 24 fps (72 frames), one locked-off shot on a clay miniature set:
-         Nico walks along the cobbles (scene "camina"), stops and waves (scene "saluda"). -->
+    <!-- 14.25 s at 24 fps (342 frames) on a clay miniature set: Nico walks along the cobbles
+         ("camina"), stops and waves ("saluda"); the camera pushes in to a close-up ("acercamiento",
+         "primer-plano") and pulls back to the whole village while "te amo cerdita" is drawn ("alejamiento"). -->
     <div
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="3"
+      data-duration="14.25"
       data-fps="24"
       data-width="1920"
       data-height="1080"
@@ -56,9 +66,9 @@
         src="assets/plate/plato.jpg"
         alt="Plató de plastilina: acera empedrada frente a una casita de ladrillo"
         data-start="0"
-        data-duration="3"
+        data-duration="2.9998"
         data-track-index="0"
-        data-color-grading='{"details":{"vignette":0.22,"vignetteFeather":0.7,"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
+        data-color-grading='{"details":{"grain":0.12,"grainSize":0.2,"grainRoughness":0.45}}'
         style="--hf-color-grading-exposure: 0"
       />
       <div
@@ -77,12 +87,57 @@
         data-composition-id="saluda"
         data-composition-src="compositions/saluda.html"
         data-start="1.5831"
-        data-duration="1.4169"
+        data-duration="1.4167"
         data-track-index="1"
         data-track-kind="graphics"
         data-width="1920"
         data-height="1080"
       ></div>
+      <!-- push-in on Nico (stepped camera, on twos): frames 73-102 -->
+      <div
+        id="acercamiento"
+        data-composition-id="acercamiento"
+        data-composition-src="compositions/acercamiento.html"
+        data-start="2.9998"
+        data-duration="1.25"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <!-- close-up (PP) with replacement faces: frames 103-166 -->
+      <div
+        id="primer-plano"
+        data-composition-id="primer-plano"
+        data-composition-src="compositions/primer-plano.html"
+        data-start="4.2498"
+        data-duration="2.6667"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <!-- pull-out to the aerial village + 'te amo cerdita' drawn letter by letter: frames 167-342 -->
+      <div
+        id="alejamiento"
+        data-composition-id="alejamiento"
+        data-composition-src="compositions/alejamiento.html"
+        data-start="6.9165"
+        data-duration="7.3335"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+      ></div>
+      <img
+        id="vineta"
+        class="clip"
+        src="assets/fx/vineta.png"
+        alt=""
+        data-start="0"
+        data-duration="14.25"
+        data-track-index="2"
+      />
     </div>
     <script>
       window.__timelines = window.__timelines || {};
